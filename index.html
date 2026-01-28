@@ -2,49 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple File Server</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Wikipedia</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; color: #202122; }
+        
+        /* Left Sidebar */
+        nav { width: 160px; background: #f6f6f6; border-right: 1px solid #a7d7f9; height: 100vh; padding: 15px; position: fixed; }
+        nav img { width: 120px; display: block; margin: 0 auto 20px; }
+        nav .menu-item { display: block; color: #0645ad; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+        
+        /* Content Area */
+        main { margin-left: 200px; padding: 40px; flex: 1; }
+        h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+        
+        /* List of Articles */
+        .article-list { margin-top: 20px; }
+        .article-card { 
+            display: block; 
+            padding: 15px; 
+            border: 1px solid #eaecf0; 
+            background: #f8f9fa; 
+            margin-bottom: 10px; 
+            color: #0645ad; 
+            text-decoration: none;
+            font-weight: bold;
+            max-width: 400px;
+        }
+        .article-card:hover { background: #fff; border-color: #3366cc; }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>My File Server</h1>
-        <p>Browse and download your files</p>
-    </header>
-    
-    <section class="file-list">
-        <div class="file">
-            <div class="file-icon">📄</div>
-            <div class="file-info">
-                <h2>File1.pdf</h2>
-                <p>Size: 2 MB</p>
-            </div>
-            <button class="download-btn">Download</button>
+
+    <nav>
+        <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="Wiki Logo">
+        <a class="menu-item" href="index.html">Main Page</a>
+    </nav>
+
+    <main>
+        <h1>Welcome to My Wiki</h1>
+        <p>This is your library. Click an article below to read it.</p>
+
+        <div class="article-list">
+            <a href="person1.html" class="article-card">📄 test</a>
+            <a href="person2.html" class="article-card">📄 Biography: Jane Smith</a>
+            <a href="faruk.html" class="article-card">📄 Faruk Kobir Ahmed</a>
         </div>
+    </main>
 
-        <div class="file">
-            <div class="file-icon">📄</div>
-            <div class="file-info">
-                <h2>Image1.jpg</h2>
-                <p>Size: 1.5 MB</p>
-            </div>
-            <button class="download-btn">Download</button>
-        </div>
-
-        <div class="file">
-            <div class="file-icon">📄</div>
-            <div class="file-info">
-                <h2>Report.docx</h2>
-                <p>Size: 3 MB</p>
-            </div>
-            <button class="download-btn">Download</button>
-        </div>
-    </section>
-
-    <footer>
-        <p>&copy; 2026 My File Server | All Rights Reserved</p>
-    </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>

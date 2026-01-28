@@ -1,182 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
-  :root {
-    --bg: #f0f0f0;
-    --card: #ffffff;
-    --txt: #000000;
-    --acc: #00ffff;
-    --btn: #000000;
-    --btxt: #00ffff;
-    --brd: #ddd;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #000000;
-      --card: #000000;
-      --txt: #ffffff;
-      --btn: #1a1a1a;
-      --brd: #333;
-    }
-  }
-
-  body.light { --bg: #f0f0f0; --card: #ffffff; --txt: #000000; --btn: #000000; --brd: #ddd; }
-  body.dark { --bg: #000000; --card: #000000; --txt: #ffffff; --btn: #1a1a1a; --brd: #333; }
-
-  body {
-    background: var(--bg);
-    color: var(--txt);
-    font-family: sans-serif;
-    margin: 0;
-    padding: 20px;
-    transition: 0.3s;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .container {
-    background: var(--card);
-    width: 100%;
-    max-width: 900px;
-    border: 1px solid var(--brd);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border-bottom: 1px solid var(--brd);
-  }
-
-  .logo {
-    background: #000;
-    color: #00ffff;
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 24px;
-    margin-right: 15px;
-  }
-
-  .banner {
-    background: #000;
-    color: #00ffff;
-    padding: 12px 20px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .grid {
-    padding: 20px;
-    display: grid;
-    gap: 15px;
-  }
-
-  @media (min-width: 768px) {
-    .grid { grid-template-columns: repeat(3, 1fr); padding: 40px; gap: 25px; }
-    body { padding: 40px; }
-  }
-
-  @media (max-width: 767px) {
-    .grid { grid-template-columns: 1fr; }
-    .container { border-radius: 0; border: none; }
-    body { padding: 0; }
-  }
-
-  .btn {
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-    clip-path: polygon(20% 0%, 100% 0%, 100% 80%, 80% 100%, 0% 100%, 0% 20%);
-    border: 4px solid var(--acc);
-    background: var(--btn);
-    color: var(--btxt);
-    cursor: pointer;
-    text-decoration: none;
-    border-radius: 0;
-  }
-
-  .btn.alt {
-    background: var(--card);
-    color: var(--txt);
-  }
-
-  #file-input { display: none; }
-
-  footer {
-    padding: 20px;
-    border-top: 1px solid var(--brd);
-    min-height: 20px;
-  }
-
-  .toggle-btn {
-    margin-top: 30px;
-    background: var(--btn);
-    color: var(--acc);
-    border: 2px solid var(--acc);
-    padding: 15px 40px;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 50px;
-  }
-</style>
+    <meta charset="UTF-8">
+    <title>Wikipedia</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; display: flex; color: #202122; }
+        
+        /* Left Sidebar */
+        nav { width: 160px; background: #f6f6f6; border-right: 1px solid #a7d7f9; height: 100vh; padding: 15px; position: fixed; }
+        nav img { width: 120px; display: block; margin: 0 auto 20px; }
+        nav .menu-item { display: block; color: #0645ad; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
+        
+        /* Content Area */
+        main { margin-left: 200px; padding: 40px; flex: 1; }
+        h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
+        
+        /* List of Articles */
+        .article-list { margin-top: 20px; }
+        .article-card { 
+            display: block; 
+            padding: 15px; 
+            border: 1px solid #eaecf0; 
+            background: #f8f9fa; 
+            margin-bottom: 10px; 
+            color: #0645ad; 
+            text-decoration: none;
+            font-weight: bold;
+            max-width: 400px;
+        }
+        .article-card:hover { background: #fff; border-color: #3366cc; }
+    </style>
 </head>
 <body>
 
-<div class="container">
-  <header>
-    <div class="logo">👽</div>
-    <h1 style="margin:0;">Robin's server</h1>
-  </header>
+    <nav>
+        <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="Wiki Logo">
+        <a class="menu-item" href="index.html">Main Page</a>
+    </nav>
 
-  <div class="banner">FUCK Google</div>
+    <main>
+        <h1>Welcome to My Wiki</h1>
+        <p>This is your library. Click an article below to read it.</p>
 
-  <div class="grid">
-    <label for="file-input" class="btn">FILES</label>
-    <input type="file" id="file-input" multiple webkitdirectory>
-    
-    <div class="btn">SECRETS</div>
-    <div class="btn">NOTES</div>
-    <div class="btn alt">LOGS</div>
-    <div class="btn">SYSTEM</div>
-    <div class="btn alt">NETWORK</div>
-  </div>
-
-  <footer></footer>
-</div>
-
-<button class="toggle-btn" onclick="toggle()">TOGGLE</button>
-
-<script>
-  function toggle() {
-    const b = document.body;
-    if (b.classList.contains('dark')) {
-      b.classList.replace('dark', 'light');
-    } else if (b.classList.contains('light')) {
-      b.classList.replace('light', 'dark');
-    } else {
-      b.classList.add(window.matchMedia('(prefers-color-scheme: dark)').matches ? 'light' : 'dark');
-    }
-  }
-
-  document.getElementById('file-input').addEventListener('change', (e) => {
-    const files = e.target.files;
-    if (files.length > 0) {
-      alert(files.length + " items selected.");
-    }
-  });
-</script>
+        <div class="article-list">
+            <a href="person1.html" class="article-card">📄 fuck u</a>
+            <a href="person2.html" class="article-card">📄 Biography: Jane Smith</a>
+            <a href="faruk.html" class="article-card">📄 Faruk Kobir Ahmed</a>
+        </div>
+    </main>
 
 </body>
 </html>
