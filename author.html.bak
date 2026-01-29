@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Biography Page</title>
+    <style>
+        /* This makes it look like Wikipedia */
+        body { font-family: sans-serif; margin: 0; display: flex; color: #202122; }
+        nav { width: 160px; background: #f6f6f6; border-right: 1px solid #a7d7f9; height: 100vh; padding: 15px; position: fixed; }
+        main { margin-left: 200px; padding: 40px; flex: 1; max-width: 800px; }
+        
+        /* The Header Line */
+        h1 { font-family: serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-bottom: 20px; }
+        
+        /* The Grey Info Box on the right */
+        .infobox { 
+            float: right; width: 260px; border: 1px solid #a2a9b1; 
+            background: #f8f9fa; padding: 10px; margin: 0 0 20px 20px; font-size: 13px; 
+        }
+        .infobox th { background: #cedff2; padding: 5px; font-size: 16px; }
+        .infobox img { width: 100%; height: auto; margin-top: 10px; border: 1px solid #ccc; }
+
+        /* Section Headings */
+        h2 { border-bottom: 1px solid #a2a9b1; font-weight: normal; margin-top: 30px; }
+        p { line-height: 1.6; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" style="color: #0645ad; text-decoration: none;">← Back to Home</a>
+    </nav>
+
+    <main>
+        <h1>Author</h1>
+
+        <table class="infobox">
+            <tr><th colspan="2">Person's Name</th></tr>
+            <tr>
+                <td colspan="2">
+                    <img src="author.jpg" alt="Call me author in this context.">
+                </td>
+            </tr>
+            <tr><td><b>Born</b></td><td>Unknown</td></tr>
+            <tr><td><b>Job</b></td><td>Professional</td></tr>
+        </table>
+
+        <p>sybau, how dare u even dare trying to know who I'm, homie?</p>
+
+        <h2>Life Story</h2>
+        <p>Nothing interesting, and am not interested in ranting about myself. it feels cringe.</p>
+
+        <h2>Achievements</h2>
+        <p>Being a Muslim is the biggest one tbh.</p>
+    </main>
+
+</body>
+</html>
