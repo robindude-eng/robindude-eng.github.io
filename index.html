@@ -1,56 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Wikipedia</title>
-    <style>
-        body { font-family: sans-serif; margin: 0; display: flex; color: #202122; }
-        
-        /* Left Sidebar */
-        nav { width: 160px; background: #f6f6f6; border-right: 1px solid #a7d7f9; height: 100vh; padding: 15px; position: fixed; }
-        nav img { width: 120px; display: block; margin: 0 auto 20px; }
-        nav .menu-item { display: block; color: #0645ad; text-decoration: none; margin-bottom: 10px; font-size: 14px; }
-        
-        /* Content Area */
-        main { margin-left: 200px; padding: 40px; flex: 1; }
-        h1 { font-family: 'Linux Libertine', Georgia, serif; font-size: 28px; border-bottom: 1px solid #a2a9b1; padding-bottom: 5px; font-weight: normal; }
-        
-        /* List of Articles */
-        .article-list { margin-top: 20px; }
-        .article-card { 
-            display: block; 
-            padding: 15px; 
-            border: 1px solid #eaecf0; 
-            background: #f8f9fa; 
-            margin-bottom: 10px; 
-            color: #0645ad; 
-            text-decoration: none;
-            font-weight: bold;
-            max-width: 400px;
-        }
-        .article-card:hover { background: #fff; border-color: #3366cc; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>
+body {
+    margin: 0;
+    font-family: 'Press Start 2P', monospace;
+    background: #000; /* pure black */
+    color: #00FF00;   /* bright neon green */
+}
+
+header {
+    display: flex;
+    justify-content: center;
+}
+
+.hero-container {
+    max-width: 1100px;
+    width: 100%;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Main content */
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+/* Buttons instead of PROJECTS title */
+.projects-title {
+    display: flex;
+    gap: 10px;
+    margin: 10px 0;
+}
+.projects-title button,
+.projects-title a {
+    flex: 1;
+    background: #000; 
+    border: 0.5px solid #00FF00; /* thinner border */
+    color: #00FF00;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', monospace;
+    font-size: 0.8rem;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* PROJECTS GRID */
+.projects-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;  /* slightly bigger gap to match bigger cards */
+    margin-top: 5px;
+}
+
+/* CARDS */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    background: #000;        /* pure black card */
+    border-radius: 6px;
+    overflow: hidden;
+    text-decoration: none;
+    color: #00FF00;          /* neon green text */
+    border: 0.5px solid #00FF00; /* thinner border */
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    padding: 5px; /* slight padding inside card for bigger feel */
+}
+
+.project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 12px #00FF00; /* slightly larger glow on hover */
+    border-color: #00FF00;
+}
+
+.project-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+    border-bottom: 0.5px solid #00FF00;
+    margin-bottom: 5px;
+}
+
+.project-card h3 {
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    font-weight: 400;
+    color: #00FF00;
+    margin: 0;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+/* subtle hover on image */
+.project-card img:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+/* FOOTER */
+footer {
+    max-width: 1100px;
+    margin: 40px auto 20px;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: #00FF00;
+    font-size: 0.7rem;
+    border-top: 0.5px solid #00FF00;
+}
+
+.footer-links {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-links a {
+    color: #00FF00;
+    text-decoration: none;
+    border: 0.5px solid #00FF00;
+    padding: 4px 8px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    font-size: 0.7rem;
+}
+
+.footer-links a:hover {
+    background: #00FF00;
+    color: #000;
+}
+
+.footer-copyright {
+    text-align: center;
+}
+</style>
 </head>
 <body>
 
-    <nav>
-        <img src="https://en.wikipedia.org/static/images/project-logos/enwiki.png" alt="Wiki Logo">
-        <a class="menu-item" href="index.html">Main Page</a>
-    </nav>
+<header>
+    <div class="hero-container">
+        <img src="hero.png" alt="Hero" class="hero-image">
+    </div>
+</header>
 
-    <main>
-        <h1>Welcome to My Wiki</h1>
-        <p>This is your library. Click an article below to read it.</p>
+<main>
+    <!-- Two buttons instead of PROJECTS title -->
+    <div class="projects-title">
+        <button>Projects</button>
+        <a href="aboutme.html">About Me</a>
+    </div>
 
-        <div class="article-list">
-            <a href="author.html" class="article-card">📄 Website Author</a>
-            <a href="faruk.html" class="article-card">📄 Faruk Kobir Ahmed</a>
-            <a href="gracelyn.html" class="article-card">❤️ Gracelyn Belgica</a>
-            <a href="jahid.html" class="article-card">📄 Jahid xudna biography</a>
-            <a href="rupok.html" class="article-card">📄 Toufik Imran Rupok Biography</a>
-            <a href="nasim.html" class="article-card">📄 Nasim FF biography 😭</a>
-        </div>
-    </main>
+    <div class="projects-row">
+        <a href="https://robindude-eng.github.io/rpcchat.github.io/" class="project-card">
+            <div class="thumb">
+                <img src="thumb1.png" alt="Thumbnail 1">
+            </div>
+            <h3>RPC chat</h3>
+        </a>
+        <a href="https://example.com/project2" class="project-card">
+            <div class="thumb">
+                <img src="thumb2.png" alt="Thumbnail 2">
+            </div>
+            <h3>Project Title Two</h3>
+        </a>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-links">
+        <a href="contact.html">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+    </div>
+    <div class="footer-copyright">
+        &copy; <span id="year"></span> Your Name
+    </div>
+</footer>
+
+<script>
+// auto-update year
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>
